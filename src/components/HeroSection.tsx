@@ -62,7 +62,10 @@ const HeroSection = () => {
               delay: item.delay,
             }}
           >
-            {item.icon}
+            <div className="relative">
+              <div className="absolute inset-0 -m-6 rounded-full bg-primary/[0.08] blur-2xl" />
+              <span className="relative">{item.icon}</span>
+            </div>
           </motion.div>
         ))}
       </div>
