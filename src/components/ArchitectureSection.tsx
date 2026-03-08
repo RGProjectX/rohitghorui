@@ -1,7 +1,6 @@
-import { FaReact, FaServer } from "react-icons/fa";
-import { SiSpringboot, SiApachekafka, SiRedis, SiMysql, SiMongodb, SiRabbitmq } from "react-icons/si";
 import { Shield, Globe, Database, Workflow } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { TechBadge } from "@/components/TechBadge";
 import { ReactNode } from "react";
 
 interface BentoItem {
