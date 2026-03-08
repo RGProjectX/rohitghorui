@@ -84,7 +84,7 @@ const ExperienceSection = () => (
         Career Path
       </p>
       <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Experience</h2>
-      <div className="h-1 w-12 rounded-full mb-16 bg-gradient-to-r from-primary to-secondary" />
+      <div className="h-1 w-12 rounded-full mb-10 bg-gradient-to-r from-primary to-secondary" />
 
       <div className="relative">
         {/* Timeline line */}
