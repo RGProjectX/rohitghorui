@@ -44,6 +44,7 @@ const Index = () => {
         <ContactSection />
       </SectionTransition>
       <Footer />
+      <BackToTop />
     </div>
   );
 };
