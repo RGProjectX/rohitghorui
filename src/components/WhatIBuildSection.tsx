@@ -37,7 +37,7 @@ const WhatIBuildSection = () => (
       <div className="grid md:grid-cols-3 gap-6">
         {capabilities.map((cap, i) => (
           <ScrollReveal key={cap.title} direction="up" delay={i * 0.1}>
-            <div className="glass glass-hover rounded-2xl p-7 group h-full">
+            <div className="rounded-xl border border-border/20 bg-card/30 p-7 group h-full transition-all duration-300 hover:border-primary/20 hover:bg-card/50">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-accent-foreground mb-5 group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-300">
                 <cap.icon className="h-6 w-6" />
               </div>

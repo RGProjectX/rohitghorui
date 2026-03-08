@@ -98,7 +98,7 @@ const ArchitectureSection = () => (
             delay={i * 0.08}
             className={item.colSpan}
           >
-            <div className="glass glass-hover rounded-2xl p-6 h-full group cursor-default transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(124,108,255,0.2)] hover:border-primary/20">
+            <div className="rounded-xl border border-border/20 bg-card/30 p-6 h-full group cursor-default transition-all duration-300 hover:border-primary/20 hover:bg-card/50">
               <div className="text-2xl text-muted-foreground group-hover:text-primary transition-colors duration-300 mb-4 group-hover:drop-shadow-[0_0_8px_rgba(124,108,255,0.5)]">
                 {item.icon}
               </div>
