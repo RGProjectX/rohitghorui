@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import { TechBadge } from "@/components/TechBadge";
 import { Building2, Lock, TrendingUp } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
@@ -106,9 +106,7 @@ const ProjectsSection = () => (
 
                   <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-border/30">
                     {project.tech.map((t) => (
-                      <Badge key={t} variant="outline" className="rounded-full text-xs font-medium border-border/40 text-muted-foreground">
-                        {t}
-                      </Badge>
+                      <TechBadge key={t} name={t} />
                     ))}
                   </div>
                 </div>
