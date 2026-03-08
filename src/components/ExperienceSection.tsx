@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, Building2, Calendar, TrendingUp, ChevronRight } from "lucide-react";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 interface Project {
