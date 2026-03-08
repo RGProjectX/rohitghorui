@@ -108,10 +108,10 @@
 
   .btn-glow {
     background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
-    box-shadow: 0 4px 20px rgba(124, 108, 255, 0.35), 0 0 40px rgba(124, 108, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(218, 165, 32, 0.35), 0 0 40px rgba(218, 165, 32, 0.1);
   }
   .btn-glow:hover {
-    box-shadow: 0 6px 30px rgba(124, 108, 255, 0.5), 0 0 60px rgba(124, 108, 255, 0.15);
+    box-shadow: 0 6px 30px rgba(218, 165, 32, 0.5), 0 0 60px rgba(218, 165, 32, 0.15);
   }
 
   .glow-orb {
