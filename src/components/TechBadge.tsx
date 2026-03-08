@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { FaJava, FaDocker, FaReact, FaGitAlt } from "react-icons/fa";
-import { SiSpringboot, SiApachekafka, SiKubernetes, SiRedis, SiMysql, SiMongodb, SiTypescript, SiRabbitmq, SiJenkins, SiHibernate } from "react-icons/si";
+import { SiSpringboot, SiApachekafka, SiKubernetes, SiRedis, SiMysql, SiMongodb, SiTypescript, SiRabbitmq, SiJenkins, SiHibernate, SiCloudflareworkers, SiAnthropic } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
 
 export interface TechInfo {
