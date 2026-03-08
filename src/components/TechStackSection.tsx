@@ -43,7 +43,7 @@ const TechPill = ({ tech }: { tech: TechItem }) => (
 const MarqueeRow = ({ items, reverse = false }: { items: TechItem[]; reverse?: boolean }) => {
   const doubled = [...items, ...items];
   return (
-    <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] group/row">
+    <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] group/row py-2">
       <div
         className={`flex gap-4 w-max ${reverse ? "animate-marquee-reverse" : "animate-marquee"} group-hover/row:[animation-play-state:paused]`}
       >
