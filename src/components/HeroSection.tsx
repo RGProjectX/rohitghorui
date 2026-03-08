@@ -131,6 +131,26 @@ const HeroSection = () => {
             </a>
           </div>
 
+          {/* Social links */}
+          <div className="flex justify-center gap-3 pt-1">
+            <a
+              href="https://github.com/rohitghorui"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass h-10 w-10 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-300"
+            >
+              <FaGithub className="h-4 w-4" />
+            </a>
+            <a
+              href="https://linkedin.com/in/rohit-ghorui"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass h-10 w-10 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-300"
+            >
+              <FaLinkedinIn className="h-4 w-4" />
+            </a>
+          </div>
+
           {/* Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-10 border-t border-border/30 max-w-xl mx-auto">
             {stats.map((stat) => (
