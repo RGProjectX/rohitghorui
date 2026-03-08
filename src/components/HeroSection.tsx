@@ -120,10 +120,14 @@ const HeroSection = () => {
               View Projects
               <ArrowRight className="h-4 w-4" />
             </button>
-            <button className="glass glass-hover text-sm font-semibold text-foreground px-7 py-3.5 rounded-xl flex items-center gap-2">
+            <a
+              href="/Rohit_Ghorui_Resume.pdf"
+              download
+              className="glass glass-hover text-sm font-semibold text-foreground px-7 py-3.5 rounded-xl flex items-center gap-2"
+            >
               <Download className="h-4 w-4" />
               Download Resume
-            </button>
+            </a>
           </div>
 
           {/* Stats */}
