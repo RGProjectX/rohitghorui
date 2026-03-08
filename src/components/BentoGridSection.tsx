@@ -79,7 +79,7 @@ const BentoGridSection = () => (
         <ScrollReveal delay={0.24}>
           <div className="rounded-xl border border-border/20 bg-card/30 p-5 h-full flex flex-col justify-between transition-all duration-300 hover:border-primary/20 hover:bg-card/50">
             <div>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 pb-3 mb-4 border-b border-border/30">
                 <MapPin className="h-4 w-4 text-primary" />
                 <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Location</h3>
               </div>
