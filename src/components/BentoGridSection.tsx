@@ -11,7 +11,7 @@ const BentoGridSection = () => (
         {/* Domain Expertise — spans 2 cols */}
         <ScrollReveal delay={0}>
           <div className="rounded-xl border border-border/20 bg-card/30 p-5 h-full col-span-1 transition-all duration-300 hover:border-primary/20 hover:bg-card/50">
-            <div className="flex items-center gap-2 pb-3 mb-4 border-b border-border/30">
+            <div className="flex items-center gap-2 pb-3 mb-4 border-b border-border/60">
               <Layers className="h-4 w-4 text-primary" />
               <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Domain</h3>
             </div>
