@@ -1,3 +1,5 @@
+import { FaServer } from "react-icons/fa";
+import { SiSpringboot, SiApachekafka, SiRedis } from "react-icons/si";
 import { Shield, Globe, Database, Workflow } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { TechBadge } from "@/components/TechBadge";
