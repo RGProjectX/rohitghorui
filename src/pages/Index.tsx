@@ -11,6 +11,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ParticleField from "@/components/ParticleField";
 import SectionTransition from "@/components/SectionTransition";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
