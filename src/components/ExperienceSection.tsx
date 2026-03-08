@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import { TechBadge } from "@/components/TechBadge";
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, Building2, Calendar, TrendingUp, ChevronRight } from "lucide-react";
 import { ReactNode } from "react";
