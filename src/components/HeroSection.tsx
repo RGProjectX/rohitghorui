@@ -46,8 +46,11 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
+          className="relative"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
+          {/* Subtle gold glow behind heading */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[80%] bg-primary/10 rounded-full blur-[80px] animate-pulse-soft pointer-events-none" />
+          <h1 className="relative text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
             <span className="text-foreground">Code that </span>
             <span className="italic text-foreground/90">scales.</span>
             <br />
