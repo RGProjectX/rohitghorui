@@ -57,7 +57,7 @@ const BentoGridSection = () => (
 
         {/* Impact Numbers */}
         <ScrollReveal delay={0.16}>
-          <div className="glass rounded-2xl p-5 h-full">
+          <div className="rounded-xl border border-border/20 bg-card/30 p-5 h-full transition-all duration-300 hover:border-primary/20 hover:bg-card/50">
             <div className="flex items-center gap-2 mb-4">
               <GitBranch className="h-4 w-4 text-primary" />
               <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Impact</h3>
