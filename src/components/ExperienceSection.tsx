@@ -101,12 +101,7 @@ const ProjectCard = ({ project, delay }: { project: Project; delay: number }) =>
 
     <div className="flex flex-wrap gap-1.5">
       {project.tech.map((t) => (
-        <span
-          key={t}
-          className="text-[11px] px-2.5 py-0.5 rounded-full bg-primary/[0.06] text-primary/70 border border-primary/10 font-medium"
-        >
-          {t}
-        </span>
+        <TechBadge key={t} name={t} />
       ))}
     </div>
   </motion.div>
