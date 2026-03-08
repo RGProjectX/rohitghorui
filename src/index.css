@@ -68,7 +68,7 @@
 
 @layer utilities {
   .section-padding {
-    @apply px-6 py-20 md:py-28;
+    @apply px-6 py-12 md:py-16;
   }
 
   .container-narrow {
