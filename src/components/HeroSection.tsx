@@ -4,6 +4,7 @@ import { FaJava, FaDocker, FaReact, FaGitAlt } from "react-icons/fa";
 import { SiSpringboot, SiApachekafka, SiKubernetes, SiRedis, SiMysql, SiMongodb } from "react-icons/si";
 import { ReactNode } from "react";
 import LightRays from "./LightRays";
+import ParticleField from "./ParticleField";
 
 interface FloatingIcon {
   icon: ReactNode;
@@ -39,6 +40,9 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Light Rays — Layer 1 */}
       <LightRays />
+
+      {/* Particle Field */}
+      <ParticleField />
 
       {/* Background radial glows */}
       <div className="absolute inset-0 pointer-events-none">
