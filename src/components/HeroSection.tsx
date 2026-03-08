@@ -41,6 +41,9 @@ const HeroSection = () => {
       {/* Light Rays — Layer 1 */}
       <LightRays />
 
+      {/* Particle Field */}
+      <ParticleField />
+
       {/* Background radial glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="glow-orb top-[10%] left-[20%] h-[500px] w-[500px] bg-primary/12 animate-pulse-soft" />
