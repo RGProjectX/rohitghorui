@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, Building2, Calendar, TrendingUp, ChevronRight } from "lucide-react";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 interface Project {
@@ -75,56 +75,42 @@ const experiences: Experience[] = [
   },
 ];
 
-const ProjectCard = ({ project, delay }: { project: Project; delay: number }) => {
-  const [expanded, setExpanded] = useState(false);
-  const visibleHighlights = expanded ? project.highlights : project.highlights.slice(0, 3);
+const ProjectCard = ({ project, delay }: { project: Project; delay: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 12 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4, delay }}
+    className="rounded-xl border border-border/20 bg-card/30 p-5 transition-all duration-300 hover:border-primary/20 hover:bg-card/50"
+  >
+    <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+      <span className="flex items-center justify-center h-6 w-6 rounded-md bg-primary/10">
+        <Briefcase className="h-3 w-3 text-primary" />
+      </span>
+      {project.name}
+    </h4>
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay }}
-      className="group/project rounded-xl border border-border/20 bg-card/30 p-5 transition-all duration-300 hover:border-primary/20 hover:bg-card/50"
-    >
-      <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-        <span className="flex items-center justify-center h-6 w-6 rounded-md bg-primary/10">
-          <Briefcase className="h-3 w-3 text-primary" />
-        </span>
-        {project.name}
-      </h4>
+    <ul className="space-y-2.5 mb-4">
+      {project.highlights.map((h, i) => (
+        <li key={i} className="text-sm text-muted-foreground flex gap-2.5 leading-relaxed">
+          <ChevronRight className="h-3.5 w-3.5 text-primary/50 mt-0.5 shrink-0" />
+          <span>{h}</span>
+        </li>
+      ))}
+    </ul>
 
-      <ul className="space-y-2.5 mb-4">
-        {visibleHighlights.map((h, i) => (
-          <li key={i} className="text-sm text-muted-foreground flex gap-2.5 leading-relaxed">
-            <ChevronRight className="h-3.5 w-3.5 text-primary/50 mt-0.5 shrink-0" />
-            <span>{h}</span>
-          </li>
-        ))}
-      </ul>
-
-      {project.highlights.length > 3 && (
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="text-xs text-primary/70 hover:text-primary mb-4 transition-colors duration-200 flex items-center gap-1"
+    <div className="flex flex-wrap gap-1.5">
+      {project.tech.map((t) => (
+        <span
+          key={t}
+          className="text-[11px] px-2.5 py-0.5 rounded-full bg-primary/[0.06] text-primary/70 border border-primary/10 font-medium"
         >
-          {expanded ? "Show less" : `+${project.highlights.length - 3} more`}
-        </button>
-      )}
-
-      <div className="flex flex-wrap gap-1.5">
-        {project.tech.map((t) => (
-          <span
-            key={t}
-            className="text-[11px] px-2.5 py-0.5 rounded-full bg-primary/[0.06] text-primary/70 border border-primary/10 font-medium"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-    </motion.div>
-  );
-};
+          {t}
+        </span>
+      ))}
+    </div>
+  </motion.div>
+);
 
 const ExperienceSection = () => (
   <section id="experience" className="section-padding relative overflow-hidden">
@@ -208,7 +194,7 @@ const ExperienceSection = () => (
               </div>
 
               {/* Project cards grid */}
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="space-y-4">
                 {exp.projects.map((project, pIdx) => (
                   <ProjectCard
                     key={project.name}
