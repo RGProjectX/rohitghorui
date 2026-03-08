@@ -8,10 +8,12 @@ import TechStackSection from "@/components/TechStackSection";
 import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ParticleField from "@/components/ParticleField";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative min-h-screen bg-background">
+      <ParticleField />
       <Navbar />
       <HeroSection />
       <WhatIBuildSection />
