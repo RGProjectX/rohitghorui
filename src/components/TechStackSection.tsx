@@ -19,6 +19,8 @@ const row1: TechItem[] = [
   { name: "Docker", icon: <FaDocker />, color: "#2496ED" },
   { name: "Kubernetes", icon: <SiKubernetes />, color: "#326CE5" },
   { name: "Kafka", icon: <SiApachekafka />, color: "#E8E8E8" },
+  { name: "Angular", icon: <SiAngular />, color: "#DD0031" },
+  { name: "AWS", icon: <FaAws />, color: "#FF9900" },
 ];
 
 const row2: TechItem[] = [
