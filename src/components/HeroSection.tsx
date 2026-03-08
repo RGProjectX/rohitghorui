@@ -80,12 +80,13 @@ const HeroSection = () => {
           className="flex items-center justify-center flex-wrap gap-4 pt-2"
         >
           <button
-            className="group glass glass-hover text-sm font-semibold text-foreground pl-6 pr-4 py-3 rounded-full flex items-center gap-3 transition-all duration-300"
+            className="group relative glass text-sm font-semibold text-foreground pl-6 pr-4 py-3 rounded-full flex items-center gap-3 overflow-hidden transition-all duration-500 hover:text-background"
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
           >
-            Let's Connect
-            <span className="h-8 w-8 rounded-full bg-foreground flex items-center justify-center group-hover:bg-primary transition-colors">
-              <ArrowRight className="h-4 w-4 text-background" />
+            <span className="absolute inset-0 bg-primary scale-0 group-hover:scale-100 transition-transform duration-500 origin-right rounded-full" />
+            <span className="relative z-10">Let's Connect</span>
+            <span className="relative z-10 h-8 w-8 rounded-full bg-foreground group-hover:bg-background/20 flex items-center justify-center transition-colors duration-500">
+              <ArrowRight className="h-4 w-4 text-background group-hover:text-background transition-colors duration-500" />
             </span>
           </button>
 
