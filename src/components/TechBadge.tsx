@@ -28,6 +28,8 @@ export const techMap: Record<string, TechInfo> = {
   "Hibernate": { icon: <SiHibernate />, color: "#59666C" },
   "Quartz": { icon: <SiSpringboot />, color: "#6DB33F" },
   "Quartz Scheduler": { icon: <SiSpringboot />, color: "#6DB33F" },
+  "Claude": { icon: <SiAnthropic />, color: "#D4A574" },
+  "Cloudflare": { icon: <SiCloudflareworkers />, color: "#F6821F" },
 };
 
 export const TechBadge = ({ name }: { name: string }) => {

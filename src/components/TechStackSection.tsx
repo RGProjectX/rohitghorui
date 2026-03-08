@@ -29,6 +29,8 @@ const row2: TechItem[] = [
   { name: "RabbitMQ", icon: <SiRabbitmq />, color: "#FF6600" },
   { name: "Jenkins", icon: <SiJenkins />, color: "#D24939" },
   { name: "Hibernate", icon: <SiHibernate />, color: "#59666C" },
+  { name: "Claude", icon: <SiAnthropic />, color: "#D4A574" },
+  { name: "Cloudflare", icon: <SiCloudflareworkers />, color: "#F6821F" },
 ];
 
 const TechPill = ({ tech }: { tech: TechItem }) => (
