@@ -48,7 +48,7 @@ const HeroSection = () => {
         {floatingIcons.map((item, i) => (
           <motion.div
             key={i}
-            className={`absolute ${item.size} text-primary/[0.12]`}
+            className={`absolute ${item.size} text-primary/[0.25]`}
             style={{ left: item.x, top: item.y, willChange: "transform" }}
             animate={{
               y: [0, -18, 0, 12, 0],
