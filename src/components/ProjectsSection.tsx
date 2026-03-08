@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import { TechBadge } from "@/components/TechBadge";
 import { Building2, Lock, TrendingUp } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
