@@ -1,5 +1,5 @@
 import { FaJava, FaDocker, FaReact, FaGitAlt } from "react-icons/fa";
-import { SiSpringboot, SiKafka, SiKubernetes, SiRedis, SiMysql, SiMongodb, SiTypescript, SiRabbitmq, SiJenkins, SiHibernate } from "react-icons/si";
+import { SiSpringboot, SiApachekafka, SiKubernetes, SiRedis, SiMysql, SiMongodb, SiTypescript, SiRabbitmq, SiJenkins, SiHibernate } from "react-icons/si";
 import { ReactNode } from "react";
 
 interface TechItem {
