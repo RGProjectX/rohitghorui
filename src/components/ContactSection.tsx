@@ -28,7 +28,7 @@ const ContactSection = () => {
 
         <div className="grid md:grid-cols-2 gap-10">
           <ScrollReveal direction="up" delay={0.1}>
-            <form onSubmit={handleSubmit} className="glass rounded-2xl p-6 space-y-5">
+            <form onSubmit={handleSubmit} className="rounded-xl border border-border/20 bg-card/30 p-6 space-y-5 transition-all duration-300 hover:border-primary/20 hover:bg-card/50">
               <div className="space-y-2">
                 <Label htmlFor="name" className="text-foreground/80">Name</Label>
                 <Input
