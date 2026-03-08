@@ -112,12 +112,7 @@ const ArchitectureSection = () => (
               {item.tech && (
                 <div className="flex flex-wrap gap-1.5 mt-auto">
                   {item.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="text-[11px] px-2.5 py-0.5 rounded-full bg-primary/8 text-primary/70 border border-primary/10 transition-colors duration-200 group-hover:bg-primary/12 group-hover:text-primary"
-                    >
-                      {t}
-                    </span>
+                    <TechBadge key={t} name={t} />
                   ))}
                 </div>
               )}
