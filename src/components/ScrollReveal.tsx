@@ -29,8 +29,8 @@ const ScrollReveal = ({
   once = true,
 }: ScrollRevealProps) => (
   <motion.div
-    initial={getInitial(direction)}
-    whileInView={getAnimate(direction)}
+    initial={variants[direction].initial}
+    whileInView={variants[direction].animate}
     viewport={{ once, margin: "-60px" }}
     transition={{ duration, delay, ease: [0.25, 0.1, 0.25, 1] }}
     className={className}
