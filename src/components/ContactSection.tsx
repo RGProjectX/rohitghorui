@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -17,26 +16,28 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-card">
-      <div className="container-narrow">
+    <section id="contact" className="section-padding relative">
+      <div className="glow-orb bottom-0 right-20 h-[300px] w-[300px] bg-secondary/8" />
+
+      <div className="container-narrow relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Get In Touch</h2>
-        <div className="h-1 w-12 bg-primary rounded-full mb-10" />
+        <div className="h-1 w-12 rounded-full mb-10 bg-gradient-to-r from-primary to-secondary" />
 
         <div className="grid md:grid-cols-2 gap-10">
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="glass rounded-2xl p-6 space-y-5">
             <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name" className="text-foreground/80">Name</Label>
               <Input
                 id="name"
                 placeholder="Your name"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
+                className="bg-muted/30 border-border/50 focus:border-primary/50"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-foreground/80">Email</Label>
               <Input
                 id="email"
                 type="email"
@@ -44,10 +45,11 @@ const ContactSection = () => {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
+                className="bg-muted/30 border-border/50 focus:border-primary/50"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message" className="text-foreground/80">Message</Label>
               <Textarea
                 id="message"
                 placeholder="Your message..."
@@ -55,52 +57,39 @@ const ContactSection = () => {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 required
+                className="bg-muted/30 border-border/50 focus:border-primary/50"
               />
             </div>
-            <Button type="submit" className="gap-2">
+            <button type="submit" className="btn-glow text-sm font-semibold text-primary-foreground px-5 py-2.5 rounded-xl flex items-center gap-2 transition-all duration-300">
               <Send className="h-4 w-4" />
               Send Message
-            </Button>
+            </button>
           </form>
 
-          {/* Info */}
           <div className="space-y-6">
             <p className="text-muted-foreground leading-relaxed">
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
 
-            <div className="space-y-4">
-              <a
-                href="mailto:ghorairohit12@gmail.com"
-                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors duration-200"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <span className="text-sm">ghorairohit12@gmail.com</span>
-              </a>
-
-              <a
-                href="tel:+918779071502"
-                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors duration-200"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <span className="text-sm">+91 8779071502</span>
-              </a>
-
-              <a
-                href="https://linkedin.com/in/rohit-ghorui"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors duration-200"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                  <Linkedin className="h-5 w-5" />
-                </div>
-                <span className="text-sm">linkedin.com/in/rohit-ghorui</span>
-              </a>
+            <div className="space-y-3">
+              {[
+                { icon: Mail, label: "ghorairohit12@gmail.com", href: "mailto:ghorairohit12@gmail.com" },
+                { icon: Phone, label: "+91 8779071502", href: "tel:+918779071502" },
+                { icon: Linkedin, label: "linkedin.com/in/rohit-ghorui", href: "https://linkedin.com/in/rohit-ghorui" },
+              ].map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="glass glass-hover flex items-center gap-3 rounded-xl p-4"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-accent-foreground">
+                    <item.icon className="h-5 w-5" />
+                  </div>
+                  <span className="text-sm text-foreground/80">{item.label}</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>

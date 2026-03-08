@@ -14,7 +14,7 @@ const AboutSection = () => (
       <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
         About Me
       </h2>
-      <div className="h-1 w-12 bg-primary rounded-full mb-8" />
+      <div className="h-1 w-12 rounded-full mb-8 bg-gradient-to-r from-primary to-secondary" />
 
       <p className="text-muted-foreground leading-relaxed max-w-3xl text-lg mb-10">
         Java Full Stack Developer with 2+ years of experience building scalable backend systems and financial platforms.
@@ -30,7 +30,7 @@ const AboutSection = () => (
         {domains.map((d) => (
           <div
             key={d.label}
-            className="flex items-center gap-3 rounded-xl border bg-card p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+            className="glass glass-hover flex items-center gap-3 rounded-xl p-4"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-accent-foreground">
               <d.icon className="h-5 w-5" />
