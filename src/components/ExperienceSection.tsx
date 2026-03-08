@@ -79,12 +79,12 @@ const ExperienceSection = () => (
     <div className="glow-orb bottom-0 left-0 h-[400px] w-[400px] bg-primary/8" />
     <div className="glow-orb top-20 right-0 h-[250px] w-[250px] bg-secondary/5" />
 
-    <div className="max-w-[1000px] mx-auto px-6 relative z-10">
+    <div className="container-narrow relative z-10">
       <p className="text-sm uppercase tracking-[0.25em] text-primary font-semibold mb-3">
         Career Path
       </p>
       <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Experience</h2>
-      <div className="h-1 w-12 rounded-full mb-16 bg-gradient-to-r from-primary to-secondary" />
+      <div className="h-1 w-12 rounded-full mb-10 bg-gradient-to-r from-primary to-secondary" />
 
       <div className="relative">
         {/* Timeline line */}
