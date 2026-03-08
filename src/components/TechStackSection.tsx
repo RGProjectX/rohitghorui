@@ -7,32 +7,39 @@ import { ReactNode } from "react";
 interface TechItem {
   name: string;
   icon: ReactNode;
+  color: string;
 }
 
 const row1: TechItem[] = [
-  { name: "Java", icon: <FaJava /> },
-  { name: "Spring Boot", icon: <SiSpringboot /> },
-  { name: "React", icon: <FaReact /> },
-  { name: "TypeScript", icon: <SiTypescript /> },
-  { name: "Docker", icon: <FaDocker /> },
-  { name: "Kubernetes", icon: <SiKubernetes /> },
-  { name: "Kafka", icon: <SiApachekafka /> },
+  { name: "Java", icon: <FaJava />, color: "#f89820" },
+  { name: "Spring Boot", icon: <SiSpringboot />, color: "#6DB33F" },
+  { name: "React", icon: <FaReact />, color: "#61DAFB" },
+  { name: "TypeScript", icon: <SiTypescript />, color: "#3178C6" },
+  { name: "Docker", icon: <FaDocker />, color: "#2496ED" },
+  { name: "Kubernetes", icon: <SiKubernetes />, color: "#326CE5" },
+  { name: "Kafka", icon: <SiApachekafka />, color: "#E8E8E8" },
 ];
 
 const row2: TechItem[] = [
-  { name: "Redis", icon: <SiRedis /> },
-  { name: "MySQL", icon: <SiMysql /> },
-  { name: "MongoDB", icon: <SiMongodb /> },
-  { name: "Git", icon: <FaGitAlt /> },
-  { name: "GitHub", icon: <VscGithub /> },
-  { name: "RabbitMQ", icon: <SiRabbitmq /> },
-  { name: "Jenkins", icon: <SiJenkins /> },
-  { name: "Hibernate", icon: <SiHibernate /> },
+  { name: "Redis", icon: <SiRedis />, color: "#DC382D" },
+  { name: "MySQL", icon: <SiMysql />, color: "#4479A1" },
+  { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
+  { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
+  { name: "GitHub", icon: <VscGithub />, color: "#FFFFFF" },
+  { name: "RabbitMQ", icon: <SiRabbitmq />, color: "#FF6600" },
+  { name: "Jenkins", icon: <SiJenkins />, color: "#D24939" },
+  { name: "Hibernate", icon: <SiHibernate />, color: "#59666C" },
 ];
 
 const TechPill = ({ tech }: { tech: TechItem }) => (
-  <div className="glass flex items-center gap-2.5 px-5 py-3 rounded-full cursor-pointer shrink-0 transition-all duration-200 hover:scale-105 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(124,108,255,0.4)] group/pill">
-    <span className="text-xl text-muted-foreground group-hover/pill:text-primary transition-colors duration-200">
+  <div
+    className="glass flex items-center gap-2.5 px-5 py-3 rounded-full cursor-pointer shrink-0 transition-all duration-300 hover:scale-110 group/pill"
+    style={{
+      // @ts-ignore
+      "--glow-color": tech.color,
+    } as React.CSSProperties}
+  >
+    <span className="text-2xl transition-all duration-300 group-hover/pill:drop-shadow-[0_0_8px_var(--glow-color)]" style={{ color: tech.color }}>
       {tech.icon}
     </span>
     <span className="text-sm font-medium text-muted-foreground group-hover/pill:text-foreground transition-colors duration-200 whitespace-nowrap">
@@ -58,18 +65,14 @@ const MarqueeRow = ({ items, reverse = false }: { items: TechItem[]; reverse?: b
 
 const TechStackSection = () => (
   <section className="section-padding relative overflow-hidden">
-    
-
     <div className="container-narrow relative z-10">
       <ScrollReveal>
-        <p className="text-sm uppercase tracking-[0.25em] text-primary font-semibold mb-3">
-          Technologies
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Tech Stack</h2>
-        <div className="h-1 w-16 rounded-full mb-4 bg-gradient-to-r from-primary to-secondary" />
-        <p className="text-muted-foreground max-w-xl mb-12">
-          Technologies I use daily to build production-grade systems.
-        </p>
+        <div className="flex items-baseline gap-4 mb-10">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">
+            Tech Stack
+          </p>
+          <span className="text-xs text-muted-foreground">Tools I ship production code with</span>
+        </div>
       </ScrollReveal>
 
       <div className="space-y-5">
