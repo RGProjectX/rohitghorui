@@ -40,7 +40,7 @@ const Index = () => {
       <div data-animate className="opacity-0"><WhatIBuildSection /></div>
       <div data-animate className="opacity-0"><ExperienceSection /></div>
       <div data-animate className="opacity-0"><ProjectsSection /></div>
-      <div data-animate className="opacity-0"><ArchitectureAnimationSection /></div>
+      
       <div data-animate className="opacity-0"><TechStackSection /></div>
       <div data-animate className="opacity-0"><BlogSection /></div>
       <div data-animate className="opacity-0"><ContactSection /></div>
