@@ -18,7 +18,7 @@ const BentoGridSection = () => (
             <div className="space-y-3">
               {[
                 { icon: CreditCard, label: "Fintech & Payments" },
-                { icon: Hotel, label: "Hotel Booking" },
+                { icon: Hotel, label: "SaaS Products" },
                 { icon: Database, label: "Distributed Systems" },
               ].map((d) => (
                 <div key={d.label} className="flex items-center gap-2.5">
