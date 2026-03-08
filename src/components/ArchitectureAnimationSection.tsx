@@ -23,33 +23,11 @@ const steps = [
 ];
 
 const ArchitectureAnimationSection = () => {
-  const [currentStep, setCurrentStep] = useState(-1);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
   const [activeNode, setActiveNode] = useState(-1);
   const [completedNodes, setCompletedNodes] = useState<number[]>([]);
 
-  const reset = useCallback(() => {
-    setCurrentStep(-1);
-    setIsPlaying(false);
-    setActiveNode(-1);
-    setCompletedNodes([]);
-  }, []);
-
-  const play = useCallback(() => {
-    reset();
-    setTimeout(() => {
-      setIsPlaying(true);
-      setCurrentStep(0);
-    }, 100);
-  }, [reset]);
-
-  const pause = useCallback(() => {
-    setIsPlaying(false);
-  }, []);
-
   useEffect(() => {
-    if (!isPlaying || currentStep < 0) return;
-
     const step = steps[currentStep];
     setActiveNode(step.to);
 
@@ -59,12 +37,17 @@ const ArchitectureAnimationSection = () => {
       if (currentStep < steps.length - 1) {
         setCurrentStep((s) => s + 1);
       } else {
-        setIsPlaying(false);
+        // Reset and loop
+        setTimeout(() => {
+          setCurrentStep(0);
+          setActiveNode(-1);
+          setCompletedNodes([]);
+        }, 800);
       }
     }, 1200);
 
     return () => clearTimeout(timer);
-  }, [currentStep, isPlaying]);
+  }, [currentStep]);
 
   const getNodeState = (index: number) => {
     if (activeNode === index) return "active";
@@ -92,28 +75,20 @@ const ArchitectureAnimationSection = () => {
 
         {/* Step indicator */}
         <AnimatePresence mode="wait">
-          {currentStep >= 0 && (
-            <motion.div
-              key={currentStep}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              className="text-center mb-8"
-            >
-              <span className="text-xs uppercase tracking-widest text-primary font-semibold">
-                Step {currentStep + 1} of {steps.length}
-              </span>
-              <p className="text-lg font-bold text-foreground mt-1">{steps[currentStep].label}</p>
-              <p className="text-sm text-muted-foreground">{steps[currentStep].desc}</p>
-            </motion.div>
-          )}
+          <motion.div
+            key={currentStep}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            className="text-center mb-8"
+          >
+            <span className="text-xs uppercase tracking-widest text-primary font-semibold">
+              Step {currentStep + 1} of {steps.length}
+            </span>
+            <p className="text-lg font-bold text-foreground mt-1">{steps[currentStep].label}</p>
+            <p className="text-sm text-muted-foreground">{steps[currentStep].desc}</p>
+          </motion.div>
         </AnimatePresence>
-
-        {currentStep < 0 && (
-          <div className="text-center mb-8 h-[72px] flex items-center justify-center">
-            <p className="text-sm text-muted-foreground">Click "Start Simulation" to see the payment flow</p>
-          </div>
-        )}
 
         {/* Architecture nodes */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-0 mb-12">
@@ -135,7 +110,6 @@ const ArchitectureAnimationSection = () => {
                   animate={state === "active" ? { scale: [1, 1.05, 1] } : { scale: 1 }}
                   transition={{ duration: 0.4 }}
                 >
-                  {/* Pulse ring on active */}
                   {state === "active" && (
                     <motion.div
                       className="absolute inset-0 rounded-xl border border-primary/40"
@@ -159,7 +133,6 @@ const ArchitectureAnimationSection = () => {
                   </span>
                   <span className="text-[10px] text-muted-foreground/60">{node.desc}</span>
 
-                  {/* Completion checkmark */}
                   {state === "completed" && (
                     <motion.div
                       initial={{ scale: 0 }}
@@ -171,18 +144,15 @@ const ArchitectureAnimationSection = () => {
                   )}
                 </motion.div>
 
-                {/* Arrow / connector */}
                 {i < nodes.length - 1 && (
                   <div className="relative flex items-center justify-center lg:w-8 h-8 lg:h-auto">
-                    {/* Line */}
                     <div className="hidden lg:block w-full h-px bg-border/40" />
                     <div className="lg:hidden w-px h-full bg-border/40" />
 
-                    {/* Animated packet */}
-                    {isPlaying && currentStep >= 0 && steps[currentStep].from === i && (
+                    {steps[currentStep].from === i && (
                       <motion.div
                         className="absolute w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_rgba(124,108,255,0.8)]"
-                        initial={{ 
+                        initial={{
                           left: "0%", top: "50%", translateY: "-50%",
                           ...(typeof window !== "undefined" && window.innerWidth < 1024 ? { left: "50%", top: "0%", translateX: "-50%", translateY: "0%" } : {})
                         }}
@@ -194,8 +164,7 @@ const ArchitectureAnimationSection = () => {
                       />
                     )}
 
-                    {/* Return packet (last step goes from DB back to client — shown on all connectors) */}
-                    {isPlaying && currentStep === steps.length - 1 && i < nodes.length - 1 && (
+                    {currentStep === steps.length - 1 && i < nodes.length - 1 && (
                       <motion.div
                         className="absolute w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_rgba(91,140,255,0.8)]"
                         initial={{ left: "100%", top: "50%", translateY: "-50%" }}
@@ -204,7 +173,6 @@ const ArchitectureAnimationSection = () => {
                       />
                     )}
 
-                    {/* Arrow tip */}
                     <svg className="hidden lg:block absolute right-0 h-3 w-3 text-border/60" viewBox="0 0 12 12" fill="currentColor">
                       <path d="M0 0L12 6L0 12z" />
                     </svg>
@@ -216,37 +184,6 @@ const ArchitectureAnimationSection = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Controls */}
-        <div className="flex justify-center gap-3">
-          {!isPlaying ? (
-            <button
-              onClick={play}
-              className="btn-glow text-sm font-semibold text-primary-foreground px-6 py-3 rounded-xl flex items-center gap-2 transition-all duration-300"
-            >
-              <Play className="h-4 w-4" />
-              {currentStep >= 0 ? "Replay Simulation" : "Start Simulation"}
-            </button>
-          ) : (
-            <button
-              onClick={pause}
-              className="glass glass-hover text-sm font-semibold text-foreground px-6 py-3 rounded-xl flex items-center gap-2"
-            >
-              <Pause className="h-4 w-4" />
-              Pause
-            </button>
-          )}
-
-          {currentStep >= 0 && (
-            <button
-              onClick={reset}
-              className="glass glass-hover text-sm font-semibold text-foreground px-6 py-3 rounded-xl flex items-center gap-2"
-            >
-              <RotateCcw className="h-4 w-4" />
-              Reset
-            </button>
-          )}
         </div>
       </div>
     </section>
