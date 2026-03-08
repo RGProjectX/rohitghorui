@@ -42,7 +42,7 @@ const ProjectsSection = () => (
       <ScrollReveal>
         <div className="flex items-baseline gap-4 mb-4">
           <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">
-            Case Studies
+            Ships That Sailed
           </p>
           <span className="text-xs text-muted-foreground">Curated work</span>
         </div>
