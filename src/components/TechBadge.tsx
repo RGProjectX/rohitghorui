@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { FaJava, FaDocker, FaReact, FaGitAlt } from "react-icons/fa";
-import { SiSpringboot, SiApachekafka, SiKubernetes, SiRedis, SiMysql, SiMongodb, SiTypescript, SiRabbitmq, SiJenkins, SiHibernate } from "react-icons/si";
+import { SiSpringboot, SiApachekafka, SiKubernetes, SiRedis, SiMysql, SiMongodb, SiTypescript, SiRabbitmq, SiJenkins, SiHibernate, SiCloudflareworkers, SiAnthropic } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
 
 export interface TechInfo {
@@ -28,6 +28,8 @@ export const techMap: Record<string, TechInfo> = {
   "Hibernate": { icon: <SiHibernate />, color: "#59666C" },
   "Quartz": { icon: <SiSpringboot />, color: "#6DB33F" },
   "Quartz Scheduler": { icon: <SiSpringboot />, color: "#6DB33F" },
+  "Claude": { icon: <SiAnthropic />, color: "#D4A574" },
+  "Cloudflare": { icon: <SiCloudflareworkers />, color: "#F6821F" },
 };
 
 export const TechBadge = ({ name }: { name: string }) => {
