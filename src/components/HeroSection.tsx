@@ -136,11 +136,11 @@ const HeroSection = () => {
           <svg viewBox="0 0 1440 320" className="w-full" preserveAspectRatio="none">
             <defs>
               <linearGradient id="curve-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="hsl(248, 100%, 71%)" stopOpacity="0" />
-                <stop offset="30%" stopColor="hsl(248, 100%, 71%)" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="hsl(222, 100%, 68%)" stopOpacity="0.6" />
-                <stop offset="70%" stopColor="hsl(248, 100%, 71%)" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="hsl(248, 100%, 71%)" stopOpacity="0" />
+                <stop offset="0%" stopColor="hsl(40, 95%, 55%)" stopOpacity="0" />
+                <stop offset="30%" stopColor="hsl(40, 95%, 55%)" stopOpacity="0.4" />
+                <stop offset="50%" stopColor="hsl(30, 90%, 50%)" stopOpacity="0.6" />
+                <stop offset="70%" stopColor="hsl(40, 95%, 55%)" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="hsl(40, 95%, 55%)" stopOpacity="0" />
               </linearGradient>
             </defs>
             <ellipse cx="720" cy="600" rx="900" ry="280" fill="none" stroke="url(#curve-gradient)" strokeWidth="1.5" />
