@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import SkillsSection from "@/components/SkillsSection";
+import WhatIBuildSection from "@/components/WhatIBuildSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ArchitectureSection from "@/components/ArchitectureSection";
 import TechStackSection from "@/components/TechStackSection";
+import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -23,7 +24,7 @@ const Index = () => {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
     );
 
     const sections = sectionsRef.current?.querySelectorAll("[data-animate]");
@@ -36,11 +37,12 @@ const Index = () => {
     <div ref={sectionsRef} className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <div data-animate className="opacity-0"><AboutSection /></div>
-      <div data-animate className="opacity-0"><SkillsSection /></div>
+      <div data-animate className="opacity-0"><WhatIBuildSection /></div>
       <div data-animate className="opacity-0"><ExperienceSection /></div>
       <div data-animate className="opacity-0"><ProjectsSection /></div>
+      <div data-animate className="opacity-0"><ArchitectureSection /></div>
       <div data-animate className="opacity-0"><TechStackSection /></div>
+      <div data-animate className="opacity-0"><BlogSection /></div>
       <div data-animate className="opacity-0"><ContactSection /></div>
       <Footer />
     </div>
