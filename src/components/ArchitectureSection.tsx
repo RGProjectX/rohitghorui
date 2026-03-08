@@ -1,7 +1,8 @@
-import { FaReact, FaServer } from "react-icons/fa";
-import { SiSpringboot, SiApachekafka, SiRedis, SiMysql, SiMongodb, SiRabbitmq } from "react-icons/si";
+import { FaServer } from "react-icons/fa";
+import { SiSpringboot, SiApachekafka, SiRedis } from "react-icons/si";
 import { Shield, Globe, Database, Workflow } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { TechBadge } from "@/components/TechBadge";
 import { ReactNode } from "react";
 
 interface BentoItem {
@@ -113,12 +114,7 @@ const ArchitectureSection = () => (
               {item.tech && (
                 <div className="flex flex-wrap gap-1.5 mt-auto">
                   {item.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="text-[11px] px-2.5 py-0.5 rounded-full bg-primary/8 text-primary/70 border border-primary/10 transition-colors duration-200 group-hover:bg-primary/12 group-hover:text-primary"
-                    >
-                      {t}
-                    </span>
+                    <TechBadge key={t} name={t} />
                   ))}
                 </div>
               )}
