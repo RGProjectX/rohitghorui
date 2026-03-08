@@ -1,7 +1,6 @@
 import { FaJava, FaDocker, FaReact, FaGitAlt } from "react-icons/fa";
 import { SiSpringboot, SiApachekafka, SiKubernetes, SiRedis, SiMysql, SiMongodb, SiTypescript, SiRabbitmq, SiJenkins, SiHibernate } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
-import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface TechItem {
@@ -30,31 +29,28 @@ const row2: TechItem[] = [
   { name: "Hibernate", icon: <SiHibernate /> },
 ];
 
+const TechPill = ({ tech }: { tech: TechItem }) => (
+  <div className="glass flex items-center gap-2.5 px-5 py-3 rounded-full cursor-pointer shrink-0 transition-all duration-200 hover:scale-105 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(124,108,255,0.4)] group/pill">
+    <span className="text-xl text-muted-foreground group-hover/pill:text-primary transition-colors duration-200">
+      {tech.icon}
+    </span>
+    <span className="text-sm font-medium text-muted-foreground group-hover/pill:text-foreground transition-colors duration-200 whitespace-nowrap">
+      {tech.name}
+    </span>
+  </div>
+);
+
 const MarqueeRow = ({ items, reverse = false }: { items: TechItem[]; reverse?: boolean }) => {
   const doubled = [...items, ...items];
   return (
-    <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-      <motion.div
-        className="flex gap-4 w-max group"
-        animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
-        transition={{ duration: 25, ease: "linear", repeat: Infinity }}
-        whileHover={{ animationPlayState: "paused" } as any}
-        style={{ willChange: "transform" }}
+    <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] group/row">
+      <div
+        className={`flex gap-4 w-max ${reverse ? "animate-marquee-reverse" : "animate-marquee"} group-hover/row:[animation-play-state:paused]`}
       >
         {doubled.map((tech, i) => (
-          <div
-            key={`${tech.name}-${i}`}
-            className="glass flex items-center gap-2.5 px-5 py-3 rounded-full cursor-pointer transition-all duration-300 hover:scale-105 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(124,108,255,0.4)] shrink-0"
-          >
-            <span className="text-xl text-muted-foreground group-hover:text-primary transition-colors duration-300">
-              {tech.icon}
-            </span>
-            <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
-              {tech.name}
-            </span>
-          </div>
+          <TechPill key={`${tech.name}-${i}`} tech={tech} />
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
