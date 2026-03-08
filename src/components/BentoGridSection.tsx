@@ -33,7 +33,7 @@ const BentoGridSection = () => (
         {/* Core Stack */}
         <ScrollReveal delay={0.08}>
           <div className="rounded-xl border border-border/20 bg-card/30 p-5 h-full transition-all duration-300 hover:border-primary/20 hover:bg-card/50">
-            <div className="flex items-center gap-2 pb-3 mb-4 border-b border-border/30">
+            <div className="flex items-center gap-2 pb-3 mb-4 border-b border-border/60">
               <Code2 className="h-4 w-4 text-primary" />
               <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Stack</h3>
             </div>
