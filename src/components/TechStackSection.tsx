@@ -1,5 +1,7 @@
 import { FaJava, FaDocker, FaReact, FaGitAlt } from "react-icons/fa";
 import { SiSpringboot, SiApachekafka, SiKubernetes, SiRedis, SiMysql, SiMongodb, SiTypescript, SiRabbitmq, SiJenkins, SiHibernate } from "react-icons/si";
+import { VscGithub } from "react-icons/vsc";
+import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface TechItem {
@@ -7,7 +9,7 @@ interface TechItem {
   icon: ReactNode;
 }
 
-const techStack: TechItem[] = [
+const row1: TechItem[] = [
   { name: "Java", icon: <FaJava /> },
   { name: "Spring Boot", icon: <SiSpringboot /> },
   { name: "React", icon: <FaReact /> },
@@ -15,18 +17,51 @@ const techStack: TechItem[] = [
   { name: "Docker", icon: <FaDocker /> },
   { name: "Kubernetes", icon: <SiKubernetes /> },
   { name: "Kafka", icon: <SiApachekafka /> },
+];
+
+const row2: TechItem[] = [
   { name: "Redis", icon: <SiRedis /> },
   { name: "MySQL", icon: <SiMysql /> },
   { name: "MongoDB", icon: <SiMongodb /> },
   { name: "Git", icon: <FaGitAlt /> },
+  { name: "GitHub", icon: <VscGithub /> },
   { name: "RabbitMQ", icon: <SiRabbitmq /> },
   { name: "Jenkins", icon: <SiJenkins /> },
   { name: "Hibernate", icon: <SiHibernate /> },
 ];
 
+const MarqueeRow = ({ items, reverse = false }: { items: TechItem[]; reverse?: boolean }) => {
+  const doubled = [...items, ...items];
+  return (
+    <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+      <motion.div
+        className="flex gap-4 w-max group"
+        animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
+        transition={{ duration: 25, ease: "linear", repeat: Infinity }}
+        whileHover={{ animationPlayState: "paused" } as any}
+        style={{ willChange: "transform" }}
+      >
+        {doubled.map((tech, i) => (
+          <div
+            key={`${tech.name}-${i}`}
+            className="glass flex items-center gap-2.5 px-5 py-3 rounded-full cursor-pointer transition-all duration-300 hover:scale-105 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(124,108,255,0.4)] shrink-0"
+          >
+            <span className="text-xl text-muted-foreground group-hover:text-primary transition-colors duration-300">
+              {tech.icon}
+            </span>
+            <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
+              {tech.name}
+            </span>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
 const TechStackSection = () => (
-  <section className="section-padding relative">
-    <div className="glow-orb top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] bg-primary/5" />
+  <section className="section-padding relative overflow-hidden">
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
 
     <div className="container-narrow relative z-10">
       <p className="text-sm uppercase tracking-[0.25em] text-primary font-semibold mb-3">
@@ -38,20 +73,9 @@ const TechStackSection = () => (
         Technologies I use daily to build production-grade systems.
       </p>
 
-      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-5">
-        {techStack.map((tech) => (
-          <div
-            key={tech.name}
-            className="glass flex flex-col items-center gap-3 p-5 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-[1.06] hover:border-primary/30 hover:shadow-[0_0_25px_rgba(124,108,255,0.25)]"
-          >
-            <span className="text-3xl text-muted-foreground group-hover:text-primary transition-colors duration-300">
-              {tech.icon}
-            </span>
-            <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-center">
-              {tech.name}
-            </span>
-          </div>
-        ))}
+      <div className="space-y-5">
+        <MarqueeRow items={row1} />
+        <MarqueeRow items={row2} reverse />
       </div>
     </div>
   </section>
