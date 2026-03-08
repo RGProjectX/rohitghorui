@@ -61,14 +61,16 @@ const TechStackSection = () => (
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
 
     <div className="container-narrow relative z-10">
-      <p className="text-sm uppercase tracking-[0.25em] text-primary font-semibold mb-3">
-        Technologies
-      </p>
-      <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Tech Stack</h2>
-      <div className="h-1 w-16 rounded-full mb-4 bg-gradient-to-r from-primary to-secondary" />
-      <p className="text-muted-foreground max-w-xl mb-12">
-        Technologies I use daily to build production-grade systems.
-      </p>
+      <ScrollReveal>
+        <p className="text-sm uppercase tracking-[0.25em] text-primary font-semibold mb-3">
+          Technologies
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Tech Stack</h2>
+        <div className="h-1 w-16 rounded-full mb-4 bg-gradient-to-r from-primary to-secondary" />
+        <p className="text-muted-foreground max-w-xl mb-12">
+          Technologies I use daily to build production-grade systems.
+        </p>
+      </ScrollReveal>
 
       <div className="space-y-5">
         <MarqueeRow items={row1} />
