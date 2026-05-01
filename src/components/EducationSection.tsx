@@ -1,5 +1,4 @@
 import { GraduationCap, Award, Calendar, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
 
 interface Education {
@@ -59,12 +58,11 @@ const EducationSection = () => (
       {/* Education */}
       <div className="mb-14">
         {education.map((edu, idx) => (
-          <motion.div
+          <div
             key={idx}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-delay={idx * 100}
             className="rounded-xl border border-border/20 bg-card/30 p-6 transition-all duration-300 hover:border-primary/20 hover:bg-card/50"
           >
             <div className="flex items-start gap-4">
@@ -85,7 +83,7 @@ const EducationSection = () => (
                 )}
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
@@ -98,12 +96,11 @@ const EducationSection = () => (
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {certifications.map((cert, idx) => (
-          <motion.div
+          <div
             key={idx}
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: idx * 0.1 }}
+            data-aos="fade-up"
+            data-aos-duration="400"
+            data-aos-delay={idx * 100}
             className="group rounded-xl border border-border/20 bg-card/30 p-5 transition-all duration-300 hover:border-primary/20 hover:bg-card/50"
           >
             <div className="flex items-start gap-3">
@@ -128,7 +125,7 @@ const EducationSection = () => (
                 </a>
               )}
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

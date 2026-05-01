@@ -1,6 +1,5 @@
 import { Badge } from "@/components/ui/badge";
 import { TechBadge } from "@/components/TechBadge";
-import { motion } from "framer-motion";
 import { Briefcase, MapPin, Building2, Calendar, TrendingUp, ChevronRight } from "lucide-react";
 import { ReactNode } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -26,8 +25,8 @@ const Metric = ({ children }: { children: string }) => (
 
 const experiences: Experience[] = [
   {
-    role: "Software Programmer",
-    company: "AvenuesAI",
+    role: "Junior Software Programmer",
+    company: "AvenuesAI - ResAvenue",
     location: "Mumbai, India",
     period: "Oct 2023 – Present",
     impact: "Serving 1000+ hotels",
@@ -58,7 +57,7 @@ const experiences: Experience[] = [
   },
   {
     role: "Junior Software Programmer",
-    company: "AvenuesAI",
+    company: "AvenuesAI - CCAvenue Trans",
     location: "Mumbai, India",
     period: "Jun 2022 – Sep 2023",
     impact: "~50% efficiency gain",
@@ -77,11 +76,10 @@ const experiences: Experience[] = [
 ];
 
 const ProjectCard = ({ project, delay }: { project: Project; delay: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 12 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.4, delay }}
+  <div
+    data-aos="fade-up"
+    data-aos-duration="400"
+    data-aos-delay={delay}
     className="rounded-xl border border-border/20 bg-card/30 p-5 transition-all duration-300 hover:border-primary/20 hover:bg-card/50"
   >
     <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
@@ -105,7 +103,7 @@ const ProjectCard = ({ project, delay }: { project: Project; delay: number }) =>
         <TechBadge key={t} name={t} />
       ))}
     </div>
-  </motion.div>
+  </div>
 );
 
 const ExperienceSection = () => (
@@ -127,30 +125,29 @@ const ExperienceSection = () => (
 
         <div className="space-y-16">
           {experiences.map((exp, idx) => (
-            <motion.div
+            <div
               key={idx}
+              data-aos="fade-left"
+              data-aos-duration="500"
+              data-aos-delay={idx * 150}
               className="relative pl-14 md:pl-16"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: idx * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
             >
               {/* Timeline node */}
               <div className="absolute left-[19px] md:left-[21px] top-1 -translate-x-1/2">
                 <div className="relative flex items-center justify-center">
                   {idx === 0 && (
-                    <motion.div
-                      className="absolute h-10 w-10 rounded-full border border-primary/20"
-                      animate={{ scale: [1, 1.8, 1], opacity: [0.4, 0, 0.4] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    <div
+                      className="absolute h-10 w-10 rounded-full border border-primary/20 animate-pulse"
+                      style={{
+                        animation: 'pulse 3s ease-in-out infinite',
+                      }}
                     />
                   )}
                   <div
-                    className={`h-3.5 w-3.5 rounded-full border-2 ${
-                      idx === 0
-                        ? "bg-primary border-primary shadow-[0_0_16px_rgba(124,108,255,0.6)]"
-                        : "bg-background border-primary/40"
-                    }`}
+                    className={`h-3.5 w-3.5 rounded-full border-2 ${idx === 0
+                      ? "bg-primary border-primary shadow-[0_0_16px_rgba(124,108,255,0.6)]"
+                      : "bg-background border-primary/40"
+                      }`}
                   />
                 </div>
               </div>
@@ -199,7 +196,7 @@ const ExperienceSection = () => (
                   />
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

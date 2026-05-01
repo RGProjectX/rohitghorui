@@ -9,7 +9,7 @@ const getGreeting = () => {
   if (hour >= 6 && hour < 12) return { text: "Good Morning", emoji: "☀️" };
   if (hour >= 12 && hour < 16) return { text: "Good Afternoon", emoji: "🌤️" };
   if (hour >= 16 && hour < 21) return { text: "Good Evening", emoji: "🌙" };
-  return { text: "Good Night", emoji: "🌌" };
+  return { text: "Good Night", emoji: "🌖" };
 };
 
 const HeroSection = () => {
@@ -69,7 +69,7 @@ const HeroSection = () => {
         >
           <span>Hello, I'm</span>
           <span className="font-semibold text-foreground">Rohit Ghorui</span>
-          <span className="text-muted-foreground/50">·</span>
+          <span className="text-muted-foreground/50">-</span>
           <span>a Java Full Stack Developer</span>
         </motion.div>
 
@@ -133,7 +133,7 @@ const HeroSection = () => {
         <div className="relative">
           {/* Glow above the curve */}
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[60%] h-40 bg-gradient-to-t from-primary/20 via-secondary/10 to-transparent blur-2xl" />
-          
+
           {/* The curve itself */}
           <svg viewBox="0 0 1440 320" className="w-full" preserveAspectRatio="none">
             <defs>
