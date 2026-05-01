@@ -31,8 +31,8 @@ const row2: TechItem[] = [
   { name: "GitHub", icon: <VscGithub />, color: "#FFFFFF" },
   { name: "RabbitMQ", icon: <SiRabbitmq />, color: "#FF6600" },
   { name: "Jenkins", icon: <SiJenkins />, color: "#D24939" },
-  { name: "Hibernate", icon: <SiHibernate />, color: "#59666C" },
-  { name: "Claude", icon: <SiAnthropic />, color: "#D4A574" },
+  { name: "Hibernate", icon: <SiHibernate />, color: "#BCAE79" },
+  { name: "Claude", icon: <SiAnthropic />, color: "#CC785C" },
   { name: "Cloudflare", icon: <SiCloudflareworkers />, color: "#F6821F" },
   { name: "Postman", icon: <SiPostman />, color: "#FF6C37" },
 ];

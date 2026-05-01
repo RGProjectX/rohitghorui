@@ -71,7 +71,7 @@ const HeroSection = () => {
             <MapPin className="h-4 w-4" />
             Mumbai
           </span>
-          <span>—</span>
+          <span className="text-muted-foreground/50">·</span>
           <span>a Java Full Stack Developer</span>
         </motion.div>
 

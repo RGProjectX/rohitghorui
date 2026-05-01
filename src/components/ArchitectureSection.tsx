@@ -16,7 +16,7 @@ interface BentoItem {
 const items: BentoItem[] = [
   {
     title: "Client Applications",
-    description: "Web and mobile apps initiate API requests to backend services — React dashboards, mobile apps, and third-party integrations.",
+    description: "Web and mobile apps initiate API requests to backend services: React dashboards, mobile apps, and third-party integrations.",
     icon: <Globe className="h-6 w-6" />,
     tech: ["React", "TypeScript", "REST APIs"],
     colSpan: "md:col-span-2",
@@ -37,7 +37,7 @@ const items: BentoItem[] = [
   },
   {
     title: "Spring Boot Microservices",
-    description: "Core business logic for payments, booking workflows, and financial operations — Payment Service, Reservation Service, Payout Service.",
+    description: "Core business logic for payments, booking workflows, and financial operations: Payment Service, Reservation Service, Payout Service.",
     icon: <SiSpringboot />,
     tech: ["Spring Boot", "REST", "Microservices"],
     colSpan: "md:col-span-2",
@@ -51,7 +51,7 @@ const items: BentoItem[] = [
   },
   {
     title: "Redis Cache",
-    description: "In-memory store for frequently accessed data — fast reads and reduced database load.",
+    description: "In-memory store for frequently accessed data, enabling fast reads and reduced database load.",
     icon: <SiRedis />,
     tech: ["Redis", "Caching"],
     colSpan: "md:col-span-1",
@@ -86,7 +86,7 @@ const ArchitectureSection = () => (
         </h2>
         <div className="h-1 w-16 rounded-full mb-4 bg-gradient-to-r from-primary to-secondary" />
         <p className="text-muted-foreground max-w-2xl mb-12">
-          How requests flow through my backend systems — from client to database and back, using API gateways, microservices, event streaming, caching, and databases.
+          How requests flow through my backend systems: from client to database and back, using API gateways, microservices, event streaming, caching, and databases.
         </p>
       </ScrollReveal>
 

@@ -27,9 +27,9 @@ const Metric = ({ children }: { children: string }) => (
 const experiences: Experience[] = [
   {
     role: "Software Programmer",
-    company: "Infibeam Avenues Ltd",
+    company: "AvenuesAI",
     location: "Mumbai, India",
-    period: "Oct 2023 — Present",
+    period: "Oct 2023 – Present",
     impact: "Serving 1000+ hotels",
     projects: [
       {
@@ -58,9 +58,9 @@ const experiences: Experience[] = [
   },
   {
     role: "Junior Software Programmer",
-    company: "Infibeam Avenues Ltd",
+    company: "AvenuesAI",
     location: "Mumbai, India",
-    period: "Jun 2022 — Sep 2023",
+    period: "Jun 2022 – Sep 2023",
     impact: "~50% efficiency gain",
     projects: [
       {
