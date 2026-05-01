@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* VisionOS Dark Theme — always dark */
+    /* VisionOS Dark Theme: always dark */
     --background: 240 12% 5%;
     --foreground: 240 5% 97%;
 

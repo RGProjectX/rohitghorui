@@ -8,7 +8,7 @@ const BentoGridSection = () => (
     <div className="container-narrow relative z-10">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
 
-        {/* Domain Expertise — spans 2 cols */}
+        {/* Domain Expertise: spans 2 cols */}
         <ScrollReveal delay={0}>
           <div className="rounded-xl border border-border/20 bg-card/30 p-5 h-full col-span-1 transition-all duration-300 hover:border-primary/20 hover:bg-card/50">
             <div className="flex items-center gap-2 pb-3 mb-4 border-b border-border/60">
