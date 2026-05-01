@@ -120,7 +120,7 @@ const ContactSection = () => {
 
               <div className="space-y-3">
                 {[
-                  { icon: Mail, label: "ghorairohit12@gmail.com", href: "mailto:ghorairohit12@gmail.com" },
+                  { icon: Mail, label: "hello@rohitghorui.me", href: "mailto:hello@rohitghorui.me" },
                   { icon: Phone, label: "+91 8779071502", href: "tel:+918779071502" },
                   { icon: Linkedin, label: "linkedin.com/in/rohit-ghorui", href: "https://linkedin.com/in/rohit-ghorui" },
                 ].map((item) => (
