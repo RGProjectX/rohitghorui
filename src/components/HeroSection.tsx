@@ -92,11 +92,11 @@ const HeroSection = () => {
           </button>
 
           <a
-            href="mailto:ghorairohit12@gmail.com"
+            href="mailto:hello@rohitghorui.me"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <Copy className="h-4 w-4" />
-            ghorairohit12@gmail.com
+            hello@rohitghorui.me
           </a>
         </motion.div>
 
