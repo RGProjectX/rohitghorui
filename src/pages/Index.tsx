@@ -7,7 +7,7 @@ import EducationSection from "@/components/EducationSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ArchitectureSection from "@/components/ArchitectureSection";
 import TechStackSection from "@/components/TechStackSection";
-import BlogSection from "@/components/BlogSection";
+// import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ParticleField from "@/components/ParticleField";
@@ -41,9 +41,9 @@ const Index = () => {
       <SectionTransition>
         <ArchitectureSection />
       </SectionTransition>
-      <SectionTransition>
+      {/* <SectionTransition>
         <BlogSection />
-      </SectionTransition>
+      </SectionTransition> */}
       <SectionTransition>
         <ContactSection />
       </SectionTransition>
