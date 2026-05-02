@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Download, Command } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -25,47 +25,63 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between px-6 md:px-10 transition-all duration-500 ${
-        scrolled ? "glass border-b border-border/30" : "bg-transparent"
-      }`}
-    >
-      <a href="#" className="text-base font-bold text-foreground tracking-tight">
-        RG
-      </a>
-
-      <div className="hidden lg:flex items-center gap-8">
-        {navLinks.map((link) => (
-          <button
-            key={link.href}
-            onClick={() => handleClick(link.href)}
-            className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-          >
-            {link.label}
-          </button>
-        ))}
-      </div>
-
-      <div className="hidden lg:flex items-center gap-3">
-        <a
-          href="/Rohit_Ghorui_Resume.pdf"
-          download
-          className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-1.5"
-        >
-          <Download className="h-3.5 w-3.5" />
-          Resume
-        </a>
-      </div>
-
-      <button
-        className="lg:hidden text-foreground"
-        onClick={() => setMobileOpen(!mobileOpen)}
+    <>
+      {/* NAVBAR */}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between px-6 md:px-10 transition-all duration-500 ${scrolled
+          ? "glass border-b border-border/30"
+          : "bg-transparent"
+          }`}
       >
-        {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-      </button>
+        {/* LOGO */}
+        <a
+          href="#"
+          className="text-base font-bold text-foreground tracking-tight"
+        >
+          RG
+        </a>
 
+        {/* DESKTOP NAV */}
+        <div className="hidden lg:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => handleClick(link.href)}
+              className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              {link.label}
+            </button>
+          ))}
+        </div>
+
+        {/* DESKTOP ACTION */}
+        <div className="hidden lg:flex items-center gap-3">
+          <a
+            href="/Rohit_Ghorui_Resume.pdf"
+            download
+            className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-1.5"
+          >
+            <Download className="h-3.5 w-3.5" />
+            Resume
+          </a>
+        </div>
+
+        {/* MOBILE TOGGLE */}
+        <button
+          className="lg:hidden text-foreground"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          {mobileOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
+        </button>
+      </nav>
+
+      {/* MOBILE MENU (FIXED OUTSIDE NAV) */}
       {mobileOpen && (
-        <div className="absolute top-14 left-0 right-0 glass border-b border-border/30 p-6 flex flex-col gap-4 lg:hidden animate-fade-in">
+        <div className="fixed top-14 left-0 right-0 z-40 glass border-b border-border/30 p-6 flex flex-col gap-4 lg:hidden animate-fade-in">
           {navLinks.map((link) => (
             <button
               key={link.href}
@@ -75,6 +91,7 @@ const Navbar = () => {
               {link.label}
             </button>
           ))}
+
           <a
             href="/Rohit_Ghorui_Resume.pdf"
             download
@@ -85,7 +102,7 @@ const Navbar = () => {
           </a>
         </div>
       )}
-    </nav>
+    </>
   );
 };
 

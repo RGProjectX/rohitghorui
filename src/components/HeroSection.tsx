@@ -60,17 +60,28 @@ const HeroSection = () => {
           </h1>
         </motion.div>
 
-        {/* Subtitle with inline photo */}
+        {/* Subtitle with responsive layouts */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex items-center justify-center gap-3 text-lg md:text-xl text-muted-foreground"
+          className="w-full"
         >
-          <span>Hello, I'm</span>
-          <span className="font-semibold text-foreground">Rohit Ghorui</span>
-          <span className="text-muted-foreground/50">-</span>
-          <span>a Java Full Stack Developer</span>
+          {/* Mobile: Pill card layout */}
+          <div className="flex md:hidden flex-col items-center justify-center gap-3">
+            <span className="text-base bg-gradient-to-b from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">
+              Hello, I'm <span className="font-semibold">Rohit Ghorui</span>
+            </span>
+            <span className="text-sm text-muted-foreground">a Java Full Stack Developer</span>
+          </div>
+
+          {/* Desktop: Original horizontal layout */}
+          <div className="hidden md:flex items-center justify-center gap-2 text-lg lg:text-xl">
+            <span className="bg-gradient-to-b from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">Hello, I'm</span>
+            <span className="font-semibold bg-gradient-to-b from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">Rohit Ghorui</span>
+            {/* <span className="text-muted-foreground/50">-</span> */}
+            <span className="bg-gradient-to-b from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">a Full Stack Developer</span>
+          </div>
         </motion.div>
 
         {/* CTAs */}
