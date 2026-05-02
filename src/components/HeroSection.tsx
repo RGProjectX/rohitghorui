@@ -72,7 +72,7 @@ const HeroSection = () => {
             <span className="text-base bg-gradient-to-b from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">
               Hello, I'm <span className="font-semibold">Rohit Ghorui</span>
             </span>
-            <span className="text-sm text-muted-foreground">a Java Full Stack Developer</span>
+            <span className="text-sm text-muted-foreground">a Full Stack Developer</span>
           </div>
 
           {/* Desktop: Original horizontal layout */}
