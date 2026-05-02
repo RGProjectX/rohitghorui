@@ -20,7 +20,6 @@ const education: Education[] = [
     degree: "Bachelor of Engineering in Computer Science",
     institution: "University of Mumbai",
     period: "2020 – 2024",
-    description: "Focused on Data Structures, Algorithms, Operating Systems, and Database Management Systems.",
   },
 ];
 

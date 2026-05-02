@@ -1,7 +1,11 @@
 import { ReactNode } from "react";
-import { FaJava, FaDocker, FaReact, FaGitAlt, FaAws } from "react-icons/fa";
-import { SiSpringboot, SiApachekafka, SiKubernetes, SiRedis, SiMysql, SiMongodb, SiTypescript, SiRabbitmq, SiJenkins, SiHibernate, SiCloudflareworkers, SiAnthropic, SiPostman, SiAngular } from "react-icons/si";
+import { FaJava, FaDocker, FaReact, FaGitAlt, FaAws, FaMoneyCheckAlt, FaWallet } from "react-icons/fa";
+import { SiSpringboot, SiApachekafka, SiKubernetes, SiRedis, SiMysql, SiMongodb, SiTypescript, SiRabbitmq, SiJenkins, SiHibernate, SiCloudflareworkers, SiAnthropic, SiPostman, SiAngular, SiReact } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
+import { MdCompareArrows } from "react-icons/md";
+import { HiOutlineReceiptTax } from "react-icons/hi";
+import { AiOutlineBank } from "react-icons/ai";
+import { color } from "framer-motion";
 
 export interface TechInfo {
   icon: ReactNode;
@@ -10,7 +14,6 @@ export interface TechInfo {
 
 export const techMap: Record<string, TechInfo> = {
   "Java": { icon: <FaJava />, color: "#f89820" },
-  "Java 11": { icon: <FaJava />, color: "#f89820" },
   "Spring Boot": { icon: <SiSpringboot />, color: "#6DB33F" },
   "Spring MVC": { icon: <SiSpringboot />, color: "#6DB33F" },
   "React": { icon: <FaReact />, color: "#61DAFB" },
@@ -33,6 +36,20 @@ export const techMap: Record<string, TechInfo> = {
   "Postman": { icon: <SiPostman />, color: "#FF6C37" },
   "Angular": { icon: <SiAngular />, color: "#DD0031" },
   "AWS": { icon: <FaAws />, color: "#FF9900" },
+  "MCP": { icon: <SiAnthropic />, color: "#CC785C" },
+  "AI Workflows": { icon: <SiAnthropic />, color: "#CC785C" },
+  "Service Orchestration": { icon: <SiCloudflareworkers />, color: "#F6821F" },
+  "REST APIs": { icon: <SiPostman />, color: "#FF6C37" },
+  "Zustand": { icon: <SiReact />, color: "#61DAFB" },
+  "Microservices": { icon: <SiSpringboot />, color: "#6DB33F" },
+  "Payments": { icon: <FaWallet />, color: "#22c55e" },          // money handling
+  "Reconciliation": { icon: <MdCompareArrows />, color: "#3b82f6" }, // matching flows
+  "Settlement": { icon: <HiOutlineReceiptTax />, color: "#f59e0b" }, // financial finalization
+  "Fintech": { icon: <AiOutlineBank />, color: "#8b5cf6" },       // domain identity     // finance domain
+  "Modular Architecture": { icon: <SiAngular />, color: "#DD0031" },
+  "RxJS": { icon: <SiAngular />, color: "#DD0031" },
+  "NgRx": { icon: <SiAngular />, color: "#DD0031" },
+  "Spring AI": { icon: <SiSpringboot />, color: "#6DB33F" }
 };
 
 export const TechBadge = ({ name }: { name: string }) => {

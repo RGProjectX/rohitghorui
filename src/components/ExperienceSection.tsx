@@ -28,51 +28,64 @@ const experiences: Experience[] = [
     role: "Junior Software Programmer",
     company: "AvenuesAI - ResAvenue",
     location: "Mumbai, India",
-    period: "Oct 2023 – Present",
-    impact: "Serving 1000+ hotels",
+    period: "Sep 2024 – Present",
+    impact: "Serving 3000+ hotels",
     projects: [
       {
-        name: "Res Avenue – Hotel Booking & Payment Platform",
+        name: "ResAvenue – Hotel Booking & Payment Platform",
         highlights: [
-          <>Built Spring Boot backend modules for property and room configuration used by <Metric>1000+ hotels</Metric></>,
-          <>Implemented Rates & Inventory system with Excel-based bulk updates handling <Metric>100+ room-date</Metric> combinations</>,
-          "Built token provisioning and transaction reports supporting payment reconciliation workflows",
-          "Automated offline booking reminders using Spring Scheduler, reducing manual follow-ups",
-          "Integrated WhatsApp API notifications for booking confirmation, cancellations, and payment status",
-          "Developed React admin dashboards for discounts, promotions, and revenue analytics",
+          <>Built and optimized end to end booking flow APIs covering search, availability, payment, and confirmation for <Metric>3000+ hotels</Metric></>,
+          <>Developed high performance availability search handling <Metric>1000s of concurrent queries</Metric> using caching and precomputed inventory reads</>,
+          <>Migrated legacy <Metric>Angular based booking engine to React</Metric>, reducing frontend complexity and improving development turnaround time by <Metric>30%</Metric></>,
+          "Integrated payment gateway workflows with CCAvenue including tokenization, retries, and failure handling for reliable transaction processing",
+          "Implemented dynamic pricing and offer application logic such as promo codes, packages, and add-ons to improve conversion rates",
+          "Built WhatsApp and email notification systems for real time booking confirmations, cancellations, and payment updates",
         ],
-        tech: ["Java", "Spring Boot", "React", "MySQL", "Redis", "Git"],
+        tech: ["Java", "Spring Boot", "React", "Angular", "MySQL", "Redis", "Git"],
       },
       {
-        name: "Res Admin – Financial Operations Platform",
+        name: "ResAvenue CRS – Central Reservation System",
         highlights: [
-          "Implemented payout processing workflows for financial settlements",
-          "Built merchant recovery and negative payout workflows",
-          "Developed payout monitoring and reconciliation reports",
-          "Implemented bulk bank payout file processing",
+          <>Designed and developed centralized rates & inventory modules managing real-time availability across <Metric>3000+ hotels</Metric></>,
+          <>Implemented bulk rates & inventory upload pipelines (Excel ingestion + validation) handling <Metric>100+ room-date</Metric> combinations with transactional consistency</>,
+          "Built OTA/channel synchronization workflows ensuring real-time inventory updates and preventing overbooking scenarios",
+          "Implemented pricing rules engine for dynamic rate plans, promotions, and derived rate mapping",
+          "Optimized high-concurrency booking flows using Redis caching and async processing for low-latency availability checks",
+          "Built reporting modules for occupancy, revenue, and channel performance analytics",
         ],
-        tech: ["Java 11", "Spring MVC", "MySQL", "Redis", "Kafka"],
+        tech: ["Java", "Spring Boot", "Angular", "MySQL", "Redis", "Jenkins", "Kafka"],
       },
+      {
+        name: "ResAdmin – Financial Operations Platform",
+        highlights: [
+          "Designed and implemented payout processing workflows for merchant settlements ensuring accuracy and audit compliance",
+          <>Built merchant recovery and negative payout handling systems reducing manual intervention by <Metric>30%</Metric></>,
+          <>Developed reconciliation pipelines comparing internal transactions with bank and payment gateway reports improving settlement accuracy by <Metric>25%</Metric></>,
+          <>Implemented monitoring and alerting for payout failures and mismatches reducing issue resolution time by <Metric>40%</Metric></>,
+          <>Optimized payout processing using Kafka based asynchronous workflows increasing throughput by <Metric>2x</Metric></>,
+        ],
+        tech: ["Java", "Spring MVC", "MySQL", "Redis", "Kafka"],
+      }
     ],
   },
   {
     role: "Junior Software Programmer",
     company: "AvenuesAI - CCAvenue Trans",
     location: "Mumbai, India",
-    period: "Jun 2022 – Sep 2023",
+    period: "Jul 2024 – Sep 2024",
     impact: "~50% efficiency gain",
     projects: [
       {
         name: "MCPG Payment Scheduler System – CC Avenue",
         highlights: [
-          "Built Quartz schedulers syncing payment data with third-party systems",
-          "Implemented retry logic and job recovery improving reliability",
+          "Built Quartz based schedulers to sync transaction and settlement data with external payment systems",
+          "Implemented retry logic and job recovery mechanisms ensuring reliable payment reconciliation and data consistency",
           <>Reduced manual reconciliation effort by <Metric>~50%</Metric></>,
         ],
-        tech: ["Java 11", "Spring Boot", "Quartz Scheduler", "MySQL"],
+        tech: ["Java", "Spring Boot", "Quartz Scheduler", "MySQL"],
       },
     ],
-  },
+  }
 ];
 
 const ProjectCard = ({ project, delay }: { project: Project; delay: number }) => (
