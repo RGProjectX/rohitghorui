@@ -9,7 +9,7 @@ const Footer = () => (
       <div className="flex whitespace-nowrap animate-marquee">
         {Array.from({ length: 12 }).map((_, i) => (
           <span key={i} className="text-sm font-semibold text-muted-foreground/40 mx-6 tracking-widest uppercase">
-            Open to Work · 
+            Open to Work ·
           </span>
         ))}
       </div>
@@ -59,7 +59,7 @@ const Footer = () => (
 
         <div className="border-t border-border/20 pt-6">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Rohit Ghorui. Built with React & Tailwind.
+            © {new Date().getFullYear()} Rohit Ghorui. Built with caffeine and questionable decisions.
           </p>
         </div>
       </div>
